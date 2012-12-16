@@ -1,0 +1,9 @@
+type = 'swf'
+
+mainClass = 'net.riastar.demo.CollapsiblePanelDemo'
+
+dependencies {
+	merged project(':collapsible-panel-fx')
+    theme  project(':collapsible-panel-spark-fx')
+}
+

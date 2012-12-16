@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:SparkButtonSkin xmlns:fx="http://ns.adobe.com/mxml/2009"
+                   xmlns:s="library://ns.adobe.com/flex/spark"
+                   minWidth="21" minHeight="21"
+                   alpha.disabledStates="0.5">
+
+    <fx:Metadata>
+        [HostComponent("spark.components.ToggleButton")]
+    </fx:Metadata>
+
+    <fx:Script>
+        /* Define the skin elements that should not be colorized. 
+         For toggle button, the graphics are colorized but the label is not. */
+        static private const exclusions:Array = ["labelDisplay"];
+
+        /**
+         * @private
+         */
+        override public function get colorizeExclusions():Array {
+            return exclusions;
+        }
+
+        /**
+         * @private
+         */
+        override protected function initializationComplete():void {
+            useChromeColor = true;
+            super.initializationComplete();
+        }
+
+        /**
+         * @private
+         */
+        override protected function updateDisplayList(unscaledWidth:Number, unscaledHeight:Number):void {
+            var cr:Number = getStyle("cornerRadius");
+
+            if (cornerRadius != cr) cornerRadius = cr;
+
+            if (tbFill) tbFill.radiusX = cornerRadius;
+            if (tbHilite) tbFill.radiusX = cornerRadius;
+
+            arrowFill.color = getStyle("symbolColor");
+
+            super.updateDisplayList(unscaledWidth, unscaledHeight);
+        }
+
+        private var cornerRadius:Number = 2;
+    </fx:Script>
+
+    <!-- states -->
+    <s:states>
+        <s:State name="up"/>
+        <s:State name="over" stateGroups="overStates"/>
+        <s:State name="down" stateGroups="downStates"/>
+        <s:State name="disabled" stateGroups="disabledStates"/>
+        <s:State name="upAndSelected" stateGroups="selectedStates, selectedUpStates"/>
+        <s:State name="overAndSelected" stateGroups="overStates, selectedStates"/>
+        <s:State name="downAndSelected" stateGroups="downStates, selectedStates"/>
+        <s:State name="disabledAndSelected" stateGroups="selectedUpStates, disabledStates, selectedStates"/>
+    </s:states>
+
+    <s:transitions>
+        <s:Transition fromState="*" toState="*">
+            <s:Rotate target="{arrow}"/>
+        </s:Transition>
+    </s:transitions>
+
+    <s:Rect id="tbFill" left="0" right="0" top="0" bottom="1">
+        <s:fill>
+            <s:LinearGradient rotation="90">
+                <s:GradientEntry color="0xE2E2E2"/>
+                <s:GradientEntry color="0xD9D9D9"/>
+            </s:LinearGradient>
+        </s:fill>
+    </s:Rect>
+
+    <s:Rect id="tbHilite" left="0" right="0" top="0" bottom="0">
+        <s:stroke>
+            <s:LinearGradientStroke rotation="90" weight="1">
+                <s:GradientEntry color="0xEAEAEA"/>
+                <s:GradientEntry color="0xD9D9D9"/>
+            </s:LinearGradientStroke>
+        </s:stroke>
+    </s:Rect>
+
+    <s:Rect id="tbDiv" left="0" right="0" height="1" bottom="0">
+        <s:fill>
+            <s:SolidColor color="0xC0C0C0"/>
+        </s:fill>
+    </s:Rect>
+
+    <s:Label id="labelDisplay" maxDisplayedLines="1"
+             left="9" right="28" top="1" bottom="0" minHeight="30"
+             verticalAlign="middle" textAlign="start" fontWeight="bold"/>
+
+    <s:Path id="arrow" data="M 0 0 L 5 5 L 0 10 Z" rotation="90" rotation.selectedStates="0" verticalCenter="0"
+            right="9">
+        <s:fill>
+            <s:SolidColor id="arrowFill"/>
+        </s:fill>
+    </s:Path>
+
+</s:SparkButtonSkin>
