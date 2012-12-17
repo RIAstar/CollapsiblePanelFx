@@ -1,3 +1,4 @@
+desktop.ini
 .gradle
 *.as3proj
 *.ipr
@@ -7,6 +8,7 @@
 .flexLibProperties
 .flexProperties
 .FlexUnitSettings
+.externalToolBuilders
 .model
 .settings
 .classpath
