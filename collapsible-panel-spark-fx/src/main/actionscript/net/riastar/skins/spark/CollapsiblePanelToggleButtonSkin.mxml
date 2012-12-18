@@ -93,11 +93,14 @@
              left="9" right="28" top="1" bottom="0" minHeight="30"
              verticalAlign="middle" textAlign="start" fontWeight="bold"/>
 
-    <s:Path id="arrow" data="M 0 0 L 5 5 L 0 10 Z" rotation="90" rotation.selectedStates="0" verticalCenter="0"
-            right="9">
-        <s:fill>
-            <s:SolidColor id="arrowFill"/>
-        </s:fill>
-    </s:Path>
+    <s:Group width="0" height="0" verticalCenter="0" right="14">
+        <s:Graphic id="arrow" rotation="90" rotation.selectedStates="0">
+            <s:Path data="M 0 0 L 5 5 L 0 10 Z" left="-2.5" top="-5">
+                <s:fill>
+                    <s:SolidColor id="arrowFill"/>
+                </s:fill>
+            </s:Path>
+        </s:Graphic>
+    </s:Group>
 
 </s:SparkButtonSkin>
