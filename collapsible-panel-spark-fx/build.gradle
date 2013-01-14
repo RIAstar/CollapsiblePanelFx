@@ -1,9 +1,10 @@
 type = 'swc'
+version = 'SNAPSHOT'
 
 def stylePath = projectDir.path + '/src/main/resources/'
 
 dependencies {
-	external project(':collapsible-panel-fx')
+    external project(':collapsible-panel-fx')
 }
 
 additionalCompilerOptions.add("-include-stylesheet=defaults.css,${stylePath}defaults.css")
