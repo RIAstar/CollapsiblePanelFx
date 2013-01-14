@@ -3,9 +3,8 @@ import org.apache.ivy.plugins.resolver.URLResolver
 buildscript {
     repositories {
         mavenCentral()
-        maven { url 'https://oss.sonatype.org/content/repositories/snapshots' }
     }
-    dependencies.classpath 'org.gradlefx:gradlefx:0.6'
+    dependencies.classpath 'org.gradlefx:gradlefx:0.6.3'
 }
 
 allprojects {
@@ -16,7 +15,7 @@ task wrapper(type: Wrapper) {
     gradleVersion = '1.1'
 }
 
-subprojects { 
+subprojects {
 	apply plugin: 'gradlefx'
 	apply plugin: 'scaffold'
 
