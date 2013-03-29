@@ -110,7 +110,7 @@ public class CollapsiblePanel extends Panel {
      * @param event    the <code>CLICK</code> event
      */
     private function toggleCollapsed(event:MouseEvent = null):void {
-        isCollapsed = !_isCollapsed;
+        if (mouseEnabled) isCollapsed = !_isCollapsed;
     }
 
 
