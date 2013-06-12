@@ -58,6 +58,11 @@ public class CollapsiblePanel extends Panel {
         if (collapseButton) collapseButton.label = value;
     }
 
+    override public function set mouseEnabled(value:Boolean):void {
+        super.mouseEnabled = value;
+        if (collapseButton) collapseButton.mouseEnabled = value;
+    }
+
     override public function get baselinePosition():Number {
         return getBaselinePositionForPart(collapseButton);
     }
@@ -82,7 +87,7 @@ public class CollapsiblePanel extends Panel {
             case collapseButton:
                 collapseButton.label = title;
                 collapseButton.selected = _isCollapsed;
-                collapseButton.mouseEnabled = true;
+                collapseButton.mouseEnabled = mouseEnabled;
                 collapseButton.addEventListener(MouseEvent.CLICK, toggleCollapsed);
                 break;
             default:
