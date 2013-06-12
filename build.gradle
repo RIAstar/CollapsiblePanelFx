@@ -21,12 +21,12 @@ subprojects {
     repositories {
         add(new URLResolver()) {
             name = 'Apache'
-            addArtifactPattern 'http://apache.cu.be/flex/4.9.0/binaries/[module]-[revision]-bin.[ext]'
+            addArtifactPattern 'http://apache.cu.be/flex/4.9.1/binaries/[module]-[revision]-bin.[ext]'
         }
     }
 
     dependencies {
-        flexSDK 'org.apache:apache-flex-sdk:4.9.0@zip'
+        flexSDK 'org.apache:apache-flex-sdk:4.9.1@zip'
     }
 
     sdkAutoInstall {
