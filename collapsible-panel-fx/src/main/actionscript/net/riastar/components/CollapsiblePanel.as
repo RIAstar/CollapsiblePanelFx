@@ -17,11 +17,7 @@ import spark.components.supportClasses.ToggleButtonBase;
  * A Panel that can be collapsed to a smaller form, but not entirely minimized.
  * A typical example would be to collapse to just the titlebar and hide the content, but that depends entirely on the skin.
  *
- * @langversion ActionScript 3.0, Flex 4.0
- * @playerversion Flash 10.0
- * @author Maxime Cowez
- * @copyright <a href="http://www.edge.be">Edge.be</a>
- * @tiptext CollapsiblePanel: a Panel that can be collapsed to a smaller form, but not entirely minimized.
+ * @author RIAstar
  *
  * @see spark.components.Panel
  */
