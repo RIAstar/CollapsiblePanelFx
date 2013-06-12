@@ -67,6 +67,10 @@ public class CollapsiblePanel extends Panel {
     /* --- construction --- */
     /* -------------------- */
 
+    public function CollapsiblePanel() {
+        mouseEnabled = true;
+    }
+
     /**
      * @private
      * @inheritDoc
